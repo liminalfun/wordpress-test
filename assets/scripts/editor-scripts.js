@@ -138,7 +138,7 @@ eval("/* global wp */\n\n/**\n * Filter block settings to hide the dropcap optio
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__(/*! /Users/xela/Sites/portfolio/_development/scripts/editor-scripts.js */\"./_development/scripts/editor-scripts.js\");\n\n\n//# sourceURL=webpack:///multi_./_development/scripts/editor-scripts.js?");
+eval("module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/wordpress/wp-content/themes/wordpress-test/_development/scripts/editor-scripts.js */\"./_development/scripts/editor-scripts.js\");\n\n\n//# sourceURL=webpack:///multi_./_development/scripts/editor-scripts.js?");
 
 /***/ })
 
