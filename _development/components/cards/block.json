@@ -1,0 +1,18 @@
+{
+    "name": "Cards",
+    "description": "A block to display multiple card components",
+    "render": true,
+    "args": {
+        "heading": ["text"],
+        "cards": {
+            "component": "assets/components/card",
+            "count": [3,2,4,5,6]
+        },
+        "classes": ["alignwide", "alignfull"],
+        "content": [
+            "empty_string",
+            "wysiwyg_short",
+            "assets/components/card"
+        ]
+    }
+}

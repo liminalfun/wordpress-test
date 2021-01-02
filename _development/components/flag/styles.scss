@@ -1,0 +1,59 @@
+.flag {
+    @include layout-margin;
+
+    display: flex;
+
+    &__inner {
+        @include no-first-last-margin;
+
+        align-self: center;
+        padding-top: space('paragraph');
+        padding-bottom: space('paragraph');
+    }
+
+    &__media {
+        @include rounded;
+        @include box-shadow;
+
+        position: relative;
+        width: 50%;
+        flex-shrink: 0;
+        order: -1;
+        margin-right: space('gap--small');
+
+        &::before {
+            display: block;
+            padding-top: ratio(6, 4);
+            content: '';
+        }
+    }
+
+    &__heading {
+        @include typestyle-h2;
+    }
+
+    &--reverse {
+        .flag__media {
+            order: 1;
+            margin-right: 0;
+            margin-left: space('gap--small');
+        }
+    }
+
+    &.alignwide,
+    &.alignfull {
+        .flag__inner {
+            padding-left: space('gap--small');
+        }
+
+        .flag__media {
+            width: 60%;
+        }
+    }
+
+    &.has-embed {
+        .flag__media {
+            @include responsive-embed;
+        }
+    }
+}

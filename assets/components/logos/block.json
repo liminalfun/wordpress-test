@@ -1,0 +1,15 @@
+{
+    "name": "Logos",
+    "description": "A flag layout with a masonry of images on one side",
+    "render": true,
+    "args": {
+        "heading": "text",
+        "content": "wysiwyg_short",
+        "reverse": "bool",
+        "logos": {
+            "component": "image",
+            "count": 6
+        },
+        "classes": ["alignwide", "alignfull"]
+    }
+}

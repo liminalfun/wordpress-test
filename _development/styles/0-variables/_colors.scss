@@ -1,0 +1,19 @@
+// ---------------------------------------------------
+// Colors
+// ---------------------------------------------------
+// You must also set Gutenberg color palette colors in granola/config.php
+
+$colors: (
+    'black': #222,
+    'grey': #ccc,
+    'white': #fff,
+    'red'  : #ff4136,
+    'blue' : #0074d9,
+    'styleguide' : #d4444d,
+);
+
+$color-pairs: (
+    'black': 'white',
+    'red': 'black',
+    'blue': 'black',
+);

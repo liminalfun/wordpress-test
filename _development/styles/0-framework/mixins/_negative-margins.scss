@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+/// Helper function for making negative margins. Used with make-row and make-column to implement grids
+///
+/// @param {number} $gutter [space('gap--small')] - If using with make-row/make-column,
+/// this should be half the gutter applied to the parent row.
+///
+/// @example scss
+///    @include negative-margins;
+///
+/// @example scss
+///    @include negative-margins(20px);
+///
+/// @access private
+
+@mixin negative-margins($gutter: space('gap--small')) {
+    margin-right: -$gutter;
+    margin-left: -$gutter;
+}
+
+@mixin responsive-negative-margins($margin: space('gap--small'), $margin--tablet: null, $margin--desktop: null) {
+    @include negative-margins($margin);
+
+    @if ($margin--tablet) {
+        @include mq(medium) {
+            @include negative-margins($margin--tablet);
+        }
+    }
+
+    @if ($margin--desktop) {
+        @include mq(large) {
+            @include negative-margins($margin--desktop);
+        }
+    }
+}
+

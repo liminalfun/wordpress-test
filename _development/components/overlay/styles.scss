@@ -1,0 +1,83 @@
+@import './mixins';
+
+.overlay {
+    @include layout-margin;
+
+    // -------------------------------------------------------------------------
+    // Do we want to apply a filter over the background image to create contrast
+    // -------------------------------------------------------------------------
+    @include overlay-darken;
+
+    // -------------------------------------------------------------------------
+    // Do we want the content to fit within the site container
+    // Pass the width you would like as a parameter.
+    // -------------------------------------------------------------------------
+    @include overlay-contain-content(width('normal'));
+
+    // -------------------------------------------------------------------------
+    // Horizontal alignment
+    // -------------------------------------------------------------------------
+    // @include overlay-h-left; // Content to the left
+    @include overlay-h-center; // Content to the center
+    // @include overlay-h-right; // Content to the right
+
+    // -------------------------------------------------------------------------
+    // Vertical alignment
+    // -------------------------------------------------------------------------
+    // @include overlay-v-top; // Less space at the top
+    @include overlay-v-center; // Even top and bottom
+    // @include overlay-v-bottom; // Less space at the bottom
+
+    position: relative;
+    z-index: 1;
+    background-color: color('black');
+    color: color('white');
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__inner {
+        @include no-first-last-margin;
+        @include make-container;
+
+        display: flex;
+        flex-direction: column;
+
+        > * {
+            width: 100%;
+            max-width: width('super-skinny');
+        }
+    }
+
+    &__heading {
+        @include typestyle-h1;
+    }
+
+    &__content {
+        @include no-first-last-margin;
+    }
+
+    &__media {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // Implement media styling
+    }
+
+    &.has-embed {
+        .overlay__media {
+            @include responsive-embed;
+
+            position: absolute;
+        }
+    }
+}
+

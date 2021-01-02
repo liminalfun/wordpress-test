@@ -1,0 +1,91 @@
+// ----------------------------------------------
+// Standard element margins
+// Possibly need to expand this to include more things
+// ----------------------------------------------
+p,
+ul,
+ol,
+table,
+iframe,
+embed,
+hr,
+address,
+pre,
+dl,
+fieldset {
+    margin-top: space('paragraph');
+    margin-bottom: space('paragraph');
+}
+
+ol,
+ul,
+dd {
+    @include no-first-last-margin;
+
+    position: relative;
+    padding-left: 0;
+    list-style-position: inside;
+
+    li {
+        margin-bottom: space('paragraph') / 2;
+    }
+}
+
+dd {
+    margin-left: 0;
+}
+
+// ----------------------------------------------
+// Removing bottom margin from nested lists
+// ----------------------------------------------
+li {
+    ol,
+    ul {
+        padding-left: space('paragraph');
+        margin-top: space('paragraph') / 2;
+        margin-bottom: space('paragraph') / 2;
+    }
+}
+
+small {
+    font-size: $small-font-size;
+}
+
+dd + dt {
+    margin-top: space('paragraph') / 2;
+}
+
+strong,
+b,
+dt {
+    font-weight: $base-bold-font-weight;
+}
+
+// caption {
+//     text-align: inherit;
+// }
+
+// Remove the gap between audio, canvas, iframes,
+// images, videos and the bottom of their containers:
+// https://github.com/h5bp/html5-boilerplate/issues/440
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+pre {
+    // overflow: scroll;
+    // overflow-wrap: break-word;
+    // word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+@include heading-selectors {
+    + p {
+        margin-top: 0;
+    }
+}
