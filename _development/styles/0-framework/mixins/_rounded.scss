@@ -1,6 +1,0 @@
-@mixin rounded {
-    @if strip-unit($base-border-radius) != 0 {
-        overflow: hidden;
-        border-radius: $base-border-radius;
-    }
-}

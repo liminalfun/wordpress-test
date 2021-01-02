@@ -1,5 +1,0 @@
-@mixin supports-mask {
-    @supports(mask-image: url('')) {
-        @content;
-    }
-}
